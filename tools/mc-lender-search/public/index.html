@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MC Lender Search</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Million Capital</p>
+        <h1>Lender + Loan Program Search</h1>
+      </div>
+      <p class="lede">
+        Private Lender Link directory for investment and commercial business-purpose loans.
+        Primary-residence consumer mortgages are excluded from results and from the Top 20.
+      </p>
+    </header>
+
+    <div class="layout">
+      <aside class="filters" id="filters">
+        <form id="search-form">
+          <label>
+            Keyword
+            <input id="q" name="q" type="search" placeholder="Lender, program, city" />
+          </label>
+          <label>
+            Category
+            <select id="category" name="category">
+              <option value="">Any priority or other tag</option>
+              <option value="hard_money">Hard Money</option>
+              <option value="short_term">Short Term</option>
+              <option value="fix_flip">Fix &amp; Flip</option>
+              <option value="dscr">DSCR</option>
+              <option value="cre_bridge">CRE Bridge</option>
+              <option value="construction">Construction / ground-up</option>
+              <option value="multifamily">Multifamily</option>
+              <option value="commercial_long_term">Commercial long-term</option>
+              <option value="bridge">Bridge</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </label>
+          <label>
+            State
+            <select id="state" name="state"></select>
+          </label>
+          <label>
+            Deal size (USD)
+            <input id="amount" name="amount" inputmode="numeric" placeholder="500000" />
+          </label>
+          <label>
+            Property type
+            <select id="property" name="property">
+              <option value="">Any</option>
+              <option value="single_family">Single-family</option>
+              <option value="condo">Condo</option>
+              <option value="townhouse">Townhouse</option>
+              <option value="two_to_four">2–4 unit</option>
+              <option value="multifamily">Multifamily</option>
+              <option value="mixed_use">Mixed-use</option>
+              <option value="commercial">Commercial</option>
+              <option value="retail">Retail</option>
+              <option value="office">Office</option>
+              <option value="industrial">Industrial</option>
+              <option value="land">Land</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="self_storage">Self-storage</option>
+            </select>
+          </label>
+          <label class="check">
+            <input id="participating" name="participating" type="checkbox" />
+            Participating profiles only
+          </label>
+          <label class="check">
+            <input id="all-scopes" name="all_scopes" type="checkbox" />
+            Include out-of-scope consumer profiles
+          </label>
+          <div class="filter-actions">
+            <button type="submit" class="primary">Search</button>
+            <button type="button" id="reset" class="ghost">Reset</button>
+          </div>
+          <div class="bookmark-row">
+            <input id="bookmark-name" type="text" placeholder="Name this filter" />
+            <button type="button" id="save-bookmark" class="ghost">Save</button>
+          </div>
+          <label>
+            Saved filters
+            <select id="bookmarks">
+              <option value="">Choose a bookmark</option>
+            </select>
+          </label>
+          <p class="hint" id="status"></p>
+        </form>
+      </aside>
+
+      <main>
+        <div class="view-bar">
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab active" data-view="search">Matches</button>
+            <button type="button" class="tab" data-view="top">Top 20</button>
+          </div>
+          <div class="exports">
+            <a id="export-json" href="#">JSON</a>
+            <a id="export-csv" href="#">CSV</a>
+          </div>
+        </div>
+
+        <section id="top-panel" hidden>
+          <div class="chips" id="top-chips"></div>
+          <p class="rules" id="rules"></p>
+          <div id="top-results"></div>
+        </section>
+
+        <section id="search-panel">
+          <div id="results"></div>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

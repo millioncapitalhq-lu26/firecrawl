@@ -1,0 +1,48 @@
+{
+  "crawled_at": "2026-10-27T07:46:59.135Z",
+  "transport": "local",
+  "firecrawl_api_url": null,
+  "source": {
+    "directory": "https://privatelenderlink.com/lenders/",
+    "browse": "https://privatelenderlink.com/search/",
+    "robots": "https://privatelenderlink.com/robots.txt"
+  },
+  "robots": {
+    "disallow": [
+      "/wp-admin/"
+    ],
+    "allow": [
+      "/wp-admin/admin-ajax.php"
+    ],
+    "sitemaps": [
+      "https://privatelenderlink.com/sitemap.xml",
+      "https://privatelenderlink.com/sitemap.html"
+    ]
+  },
+  "pages": {
+    "directory_lenders": 463,
+    "participating": 86,
+    "non_participating": 377,
+    "profiles_targeted": 463,
+    "profiles_fetched": 463,
+    "profiles_from_cache": 0,
+    "profiles_failed": [],
+    "skipped_by_robots": 0,
+    "browse_region_links_seen": 1
+  },
+  "counts": {
+    "lenders": 463,
+    "participating": 86,
+    "in_scope": 462,
+    "consumer_primary": 1,
+    "with_priority_tag": 420
+  },
+  "gaps": [
+    "The /search/ browse page is a FacetWP shell. Loan-type and market options render in the browser, so this crawl records the page and any server-rendered region links rather than every facet combination.",
+    "Non-participating profiles often omit Lending Quick Facts. Ranking prefers participating lenders with structured programs.",
+    "Phone numbers are taken from published tel: links. Some profiles hide the number behind a button while still including it in the HTML.",
+    "Sitemap profile URLs outside /lenders/ (vendors, staff, software) are not treated as lenders.",
+    "This run used the local fetch transport because FIRECRAWL_API_URL / FIRECRAWL_API_KEY were not configured. Re-crawl with MC_CRAWL_TRANSPORT=firecrawl when the self-hosted API (port 3002) or a cloud key is available."
+  ],
+  "normalized_at": "2026-10-27T07:50:16.144Z"
+}
